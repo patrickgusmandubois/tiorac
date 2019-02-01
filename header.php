@@ -1,0 +1,28 @@
+<?php
+/**
+ *
+ * @link https://blackdigital.com.br
+ *
+ * @package BlackDigital
+ * @subpackage BaseTheme
+ */
+?><!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	<?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+<div id="page" class="site">
+
+	<header class="site-header">
+		<?php if ( is_singular() ) :
+			get_template_part( 'template-parts/header/single' );
+			rewind_posts();
+		endif; ?>
+	</header><!-- .site-header -->
+
+	<div id="content" class="site-content">
