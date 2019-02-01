@@ -127,7 +127,7 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 		$themeTool = new ThemeTool_Page();
 		$themeTool->insertToUpdate("Black", get_template_directory(), "origin", "master");
 
-		$plugin = new ManagerTheme(  );
+		$plugin = new ManagerTheme( $themeTool );
     	$plugin->init();
 	}
 endif;
