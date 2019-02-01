@@ -11,7 +11,7 @@ class ThemeTool_Page {
     private $updates = array();
 
     public function insertToUpdate($label, $uri, $origin, $branch) {
-        $updates[] = array(
+        $this->$updates[] = array(
 			'label'     => $label,
 			'uri'       => $uri,
 			'origin'    => $origin,
@@ -21,6 +21,7 @@ class ThemeTool_Page {
 
     private function atualizarTemas() {
         $current = getcwd();
+        var_dump($this->$updates);
 
         foreach($this->$updates as $update) {
             chdir($update["uri"]);
