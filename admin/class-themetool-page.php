@@ -8,7 +8,11 @@
  */
 class ThemeTool_Page {
 
-    private $updates = array();
+    protected $updates = array();
+
+    public function __construct() {
+        //$this->wp_version = $GLOBALS['wp_version'];
+    }
 
     public function insertToUpdate($label, $uri, $origin, $branch) {
         $this->$updates[] = array(
