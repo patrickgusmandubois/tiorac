@@ -40,6 +40,6 @@ class Submenu_Page {
 
         chdir($current);
 
-        echo " - Fim3";
+        echo " - Fim4";
     }
 }
