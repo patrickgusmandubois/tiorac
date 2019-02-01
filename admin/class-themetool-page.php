@@ -15,7 +15,7 @@ class ThemeTool_Page {
     }
 
     public function insertToUpdate($label, $uri, $origin, $branch) {
-        $this->$updates[] = array(
+        $updates[] = array(
 			'label'     => $label,
 			'uri'       => $uri,
 			'origin'    => $origin,
