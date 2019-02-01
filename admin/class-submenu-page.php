@@ -31,6 +31,14 @@ class Submenu_Page {
     }
 
     private function atualizarTemas() {
-        echo "Atualizando Temas...";
+        $current = getcwd();
+
+        chdir(get_template_directory());
+
+        echo shell_exec("git pull origin master");
+
+        chdir($current);
+        
+        echo "Fim";
     }
 }
