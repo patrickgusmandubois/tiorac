@@ -8,7 +8,7 @@
  */
 
  require_once get_template_directory() . '/admin/class-themetool-page.php';
- require_once get_template_directory() . '/admin/class-submenu.php';
+ require_once get_template_directory() . '/admin/class-managertheme.php';
 
 
 if ( ! function_exists( 'blackdigital_setup' ) ) :
@@ -124,7 +124,10 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 
 		//add_theme_support( 'responsive-embeds' );
 
-		$plugin = new Submenu( new ThemeTool_Page() );
+		$themeTool = new ThemeTool_Page();
+		$themeTool->insertToUpdate("Black", get_template_directory(), "origin", "master");
+
+		$plugin = new ManagerTheme(  );
     	$plugin->init();
 	}
 endif;

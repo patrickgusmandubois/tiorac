@@ -7,6 +7,33 @@
  * @package Custom_Admin_Settings
  */
 class ThemeTool_Page {
+
+    private $updates = array();
+
+    public function insertToUpdate($label, $uri, $origin, $branch) {
+        $this->$updates[] = array(
+			'label'     => $label,
+			'uri'       => $uri,
+			'origin'    => $origin,
+			'branch'    => $branch
+        );
+    }
+
+    private function atualizarTemas() {
+        $current = getcwd();
+
+        foreach($this->$updates as $update) {
+            chdir($update["uri"]);
+            $cmd = "git pull {origin} {branch} 2>&1";
+            $cmd = str_replace("{origin}", $update["origin"], $cmd);
+            $cmd = str_replace("{branch}", $update["branch"], $cmd);
+            exec($cmd, $output);
+            print_r($output);
+        }
+
+        chdir($current);
+        echo " - Fim5";
+    }
  
     public function render() {
         ?>
@@ -28,18 +55,5 @@ class ThemeTool_Page {
                 $this->atualizarTemas();
             }
         }
-    }
-
-    private function atualizarTemas() {
-        $current = getcwd();
-
-        chdir(get_template_directory());
-
-        exec("git pull origin master 2>&1", $output);
-        print_r($output);
-
-        chdir($current);
-
-        echo " - Fim4";
     }
 }
