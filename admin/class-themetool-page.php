@@ -22,7 +22,7 @@ class ThemeTool_Page {
     private function atualizarTemas() {
         $current = getcwd();
 
-        foreach($updates as $update) {
+        foreach($this->$updates as $update) {
             chdir($update["uri"]);
             $cmd = "git pull {origin} {branch} 2>&1";
             $cmd = str_replace("{origin}", $update["origin"], $cmd);
