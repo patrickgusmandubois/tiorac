@@ -35,10 +35,11 @@ class Submenu_Page {
 
         chdir(get_template_directory());
 
-        echo shell_exec("git pull origin master");
+        $output = shell_exec("git pull origin master");
+        echo $output;
 
         chdir($current);
-        
-        echo "Fim";
+
+        echo "Fim2";
     }
 }
