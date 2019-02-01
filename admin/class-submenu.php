@@ -9,13 +9,13 @@ class Submenu {
     * @var    Submenu_Page
     * @access private
     */
-    private $submenu_page;
+    private $themetool_page;
 
     /**
     * @param Submenu_Page
     */
-    public function __construct( $submenu_page ) {
-        $this->submenu_page = $submenu_page;
+    public function __construct( $themetool_page ) {
+        $this->themetool_page = $themetool_page;
     }
 
     public function init() {
@@ -29,7 +29,7 @@ class Submenu {
             'Ferramentas do Tema',
             'manage_options',
             'theme-tool',
-            array( $this->submenu_page, 'render' )
+            array( $this->themetool_page, 'render' )
         );
     }
 }

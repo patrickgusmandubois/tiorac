@@ -7,9 +7,9 @@
  * @subpackage BaseTheme
  */
 
- require_once get_template_directory() . '/admin/class-submenu-page.php';
+ require_once get_template_directory() . '/admin/class-themetool-page.php';
  require_once get_template_directory() . '/admin/class-submenu.php';
- $meuTesteDeAgora = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+
 
 if ( ! function_exists( 'blackdigital_setup' ) ) :
 
@@ -124,7 +124,7 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 
 		//add_theme_support( 'responsive-embeds' );
 
-		$plugin = new Submenu( new Submenu_Page() );
+		$plugin = new Submenu( new ThemeTool_Page() );
     	$plugin->init();
 	}
 endif;
