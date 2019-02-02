@@ -173,7 +173,7 @@ add_action( 'wp_print_footer_scripts', 'twentynineteen_skip_link_focus_fix' );
 */
 
 
-function blackdigital_verify_update($themetool) {
+function blackdigital_verify_update($content, $themetool) {
 	$themeTool->insertToUpdate("Black Digital Tema Base", get_template_directory(), "origin", "master");
 
 	return $themeTool;
