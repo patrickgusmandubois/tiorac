@@ -33,7 +33,7 @@ class ThemeTool_Page {
             $cmd = str_replace("{origin}", $update["origin"], $cmd);
             $cmd = str_replace("{branch}", $update["branch"], $cmd);
             exec($cmd, $output);
-            $this->results_updates[] = $output
+            $this->results_updates[] = $output;
         }
 
         chdir($current);
