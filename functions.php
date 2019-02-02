@@ -7,7 +7,7 @@
  * @subpackage BaseTheme
  */
 
- require_once get_template_directory() . '/admin/class-themetool-page.php';
+ require_once get_template_directory() . '/admin/class-update-manager.php';
  require_once get_template_directory() . '/admin/class-managertheme.php';
 
 
