@@ -125,7 +125,7 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 		//add_theme_support( 'responsive-embeds' );
 
 		$themeTool = new ThemeTool_Page();
-		$themeTool->insertToUpdate("Black Digital Tema Base", get_template_directory(), "origin", "master");
+		$themeTool = apply_filters( "blackdigital_verify_update",  $themeTool);
 
 		$plugin = new ManagerTheme( $themeTool );
     	$plugin->init();
@@ -171,5 +171,14 @@ function twentynineteen_skip_link_focus_fix() {
 }
 add_action( 'wp_print_footer_scripts', 'twentynineteen_skip_link_focus_fix' );
 */
+
+
+function blackdigital_verify_update($themetool) {
+	$themeTool->insertToUpdate("Black Digital Tema Base", get_template_directory(), "origin", "master");
+
+	return $themeTool;
+}
+add_filter( "blackdigital_verify_update", "blackdigital_verify_update");
+
 
 require_once get_template_directory() . '/classes/tgm-plugin-activation.php';
