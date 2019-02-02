@@ -25,6 +25,7 @@ class ThemeTool_Page {
 
     private function atualizarTemas() {
         $current = getcwd();
+        $output= array();
 
         foreach($this->updates as $update) {
             chdir($update["uri"]);
@@ -32,32 +33,22 @@ class ThemeTool_Page {
             $cmd = str_replace("{origin}", $update["origin"], $cmd);
             $cmd = str_replace("{branch}", $update["branch"], $cmd);
             exec($cmd, $output);
-            print_r($output);
         }
 
         chdir($current);
         echo " - Fim5";
+        return $output;
     }
  
     public function render() {
-        ?>
-            <div class="wrap">    
-                <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
-
-                <form method="post" name="test-button">
-                    <span id="test-button">
-                        <h2>Atualização</h2>
-                        <input id="test-settings" type="submit" value="Atualizar Temas" class="button" name="blackdigital-atualizar" >
-                        <p>Essa ação irá forçar uma atualização do tema, isso pode quebrar o site.</p>
-                    </span>
-                </form>
-            </div><!-- .wrap -->
-        <?php
+        $results = array();
 
         foreach($_POST as $key=>$post_data){
             if ($key == "blackdigital-atualizar") {
-                $this->atualizarTemas();
+                $results[] = $this->atualizarTemas();
             }
         }
+
+        require_once get_template_directory() . '/admin/view.php';
     }
 }

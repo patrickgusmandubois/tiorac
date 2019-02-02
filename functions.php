@@ -125,7 +125,7 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 		//add_theme_support( 'responsive-embeds' );
 
 		$themeTool = new ThemeTool_Page();
-		$themeTool->insertToUpdate("Black", get_template_directory(), "origin", "master");
+		$themeTool->insertToUpdate("Black Digital Tema Base", get_template_directory(), "origin", "master");
 
 		$plugin = new ManagerTheme( $themeTool );
     	$plugin->init();
