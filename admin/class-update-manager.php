@@ -42,6 +42,7 @@ class UpdateManager {
 
         foreach($this->updates as $update) {
             chdir($update["uri"]);
+            $cmd = "";
             $cmd = "git pull {origin} {branch} 2>&1";
             $cmd = str_replace("{origin}", $update["origin"], $cmd);
             $cmd = str_replace("{branch}", $update["branch"], $cmd);
