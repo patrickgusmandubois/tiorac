@@ -125,7 +125,7 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 		//add_theme_support( 'responsive-embeds' );
 
 		$themeTool = new ThemeTool_Page();
-		$themeTool = apply_filters( "blackdigital_verify_update",  $themeTool);
+		$themeTool = apply_filters( "blackdigital_verify_update", "", $themeTool);
 
 		$plugin = new ManagerTheme( $themeTool );
     	$plugin->init();
