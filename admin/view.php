@@ -23,7 +23,7 @@
 
     <?php foreach($this->results_updates as $result){ ?>
         <div class="result">
-            <?php foreach($output as $result){ ?>
+            <?php foreach($result as $output){ ?>
                 <p><?php echo $output; ?></p>
             <?php } ?>        
         </div>
