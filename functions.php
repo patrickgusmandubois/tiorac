@@ -125,7 +125,7 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 		//add_theme_support( 'responsive-embeds' );
 
 		$themeTool = new ThemeTool_Page();
-		$themeTool = apply_filters( "blackdigital_verify_update", "", $themeTool);
+		$themeTool = apply_filters( "blackdigital_verify_update", $themeTool);
 
 		$plugin = new ManagerTheme( $themeTool );
     	$plugin->init();
@@ -173,8 +173,10 @@ add_action( 'wp_print_footer_scripts', 'twentynineteen_skip_link_focus_fix' );
 */
 
 
-function blackdigital_verify_update($content, $themetool) {
-	$themeTool->insertToUpdate("Black Digital Tema Base", get_template_directory(), "origin", "master");
+function blackdigital_verify_update($themetool) {
+	//$themeTool->insertToUpdate("Black Digital Tema Base", get_template_directory(), "origin", "master");
+
+	echo var_dump($themetool);
 
 	return $themeTool;
 }
