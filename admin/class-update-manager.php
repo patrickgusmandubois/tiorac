@@ -6,13 +6,19 @@
 /**
  * @package Custom_Admin_Settings
  */
-class ThemeTool_Page {
+class UpdateManager {
 
     protected $updates = array();
     protected $results_updates = array();
+    protected static $instance = NULL;
 
     public function __construct() {
         //$this->wp_version = $GLOBALS['wp_version'];
+    }
+
+    public static function get_instance() {
+        NULL === self::$instance and self::$instance = new self;
+        return self::$instance;
     }
 
     public function insertToUpdate($label, $uri, $origin, $branch) {

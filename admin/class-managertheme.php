@@ -6,16 +6,16 @@
 class ManagerTheme {
  
     /**
-    * @var    Submenu_Page
+    * @var    
     * @access private
     */
     private $themetool_page;
 
     /**
-    * @param Submenu_Page
+    * @param 
     */
-    public function __construct( $themetool_page ) {
-        $this->themetool_page = $themetool_page;
+    public function __construct( ) {
+        UpdateManager->get_instance();
     }
 
     public function init() {
@@ -29,7 +29,7 @@ class ManagerTheme {
             'Ferramentas do Tema',
             'manage_options',
             'theme-tool',
-            array( $this->themetool_page, 'render' )
+            array( UpdateManager->get_instance(), 'render' )
         );
     }
 }
