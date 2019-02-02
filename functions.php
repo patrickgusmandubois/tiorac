@@ -124,7 +124,7 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 
 		//add_theme_support( 'responsive-embeds' );
 
-		$updateManager = UpdateManager->get_instance();
+		$updateManager = UpdateManager::get_instance();
 		$updateManager->insertToUpdate("Black Digital", get_template_directory(), "origin", "master");
 
 		$plugin = new ManagerTheme();

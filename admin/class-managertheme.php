@@ -15,7 +15,7 @@ class ManagerTheme {
     * @param 
     */
     public function __construct( ) {
-        UpdateManager->get_instance();
+        UpdateManager::get_instance();
     }
 
     public function init() {
@@ -29,7 +29,7 @@ class ManagerTheme {
             'Ferramentas do Tema',
             'manage_options',
             'theme-tool',
-            array( UpdateManager->get_instance(), 'render' )
+            array( UpdateManager::get_instance(), 'render' )
         );
     }
 }
