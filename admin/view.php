@@ -21,7 +21,7 @@
         </span>
     </form>
 
-    <?php foreach($result as $results){ ?>
+    <?php foreach($this->results_updates as $result){ ?>
         <div class="result">
             <?php foreach($output as $result){ ?>
                 <p><?php echo $output; ?></p>

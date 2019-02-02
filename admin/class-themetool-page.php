@@ -9,6 +9,7 @@
 class ThemeTool_Page {
 
     protected $updates = array();
+    protected $results_updates = array();
 
     public function __construct() {
         //$this->wp_version = $GLOBALS['wp_version'];
@@ -25,7 +26,6 @@ class ThemeTool_Page {
 
     private function atualizarTemas() {
         $current = getcwd();
-        $output= array();
 
         foreach($this->updates as $update) {
             chdir($update["uri"]);
@@ -33,19 +33,18 @@ class ThemeTool_Page {
             $cmd = str_replace("{origin}", $update["origin"], $cmd);
             $cmd = str_replace("{branch}", $update["branch"], $cmd);
             exec($cmd, $output);
+            $this->results_updates[] = $output
         }
 
         chdir($current);
         echo " - Fim5";
-        return $output;
     }
  
     public function render() {
-        $results = array();
 
         foreach($_POST as $key=>$post_data){
             if ($key == "blackdigital-atualizar") {
-                $results[] = $this->atualizarTemas();
+                $this->atualizarTemas();
             }
         }
 
