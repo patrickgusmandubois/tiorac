@@ -6,12 +6,6 @@
 class ManagerTheme {
  
     /**
-    * @var    
-    * @access private
-    */
-    private $themetool_page;
-
-    /**
     * @param 
     */
     public function __construct( ) {

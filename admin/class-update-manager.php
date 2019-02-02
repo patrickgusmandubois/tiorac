@@ -22,6 +22,12 @@ class UpdateManager {
     }
 
     public function insertToUpdate($label, $uri, $origin, $branch) {
+        foreach($this->updates as $update) {
+            if ($update["uri"] == $uri) {
+                return;
+            }
+        }
+
         $this->updates[] = array(
 			'label'     => $label,
 			'uri'       => $uri,
@@ -32,6 +38,7 @@ class UpdateManager {
 
     private function atualizarTemas() {
         $current = getcwd();
+        $this->results_updates = array();
 
         foreach($this->updates as $update) {
             chdir($update["uri"]);
@@ -43,7 +50,6 @@ class UpdateManager {
         }
 
         chdir($current);
-        echo " - Fim5";
     }
  
     public function render() {
@@ -55,5 +61,6 @@ class UpdateManager {
         }
 
         require_once get_template_directory() . '/admin/view.php';
+        $this->results_updates = array();
     }
 }

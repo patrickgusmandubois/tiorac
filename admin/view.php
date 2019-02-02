@@ -11,6 +11,7 @@
     <form method="post" name="test-button">
         <span id="test-button">
             <h2>Atualização</h2>
+            <p>Atualizar os seguintes temas:</p>
             <ul>
                 <?php foreach($this->updates as $update) { ?>
                     <li><?php echo $update["label"] ?></li>
