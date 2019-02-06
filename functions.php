@@ -9,7 +9,7 @@
 
  require_once get_template_directory() . '/admin/class-update-manager.php';
  require_once get_template_directory() . '/admin/class-managertheme.php';
-//teste_n
+//teste_a
 
 if ( ! function_exists( 'blackdigital_setup' ) ) :
 
