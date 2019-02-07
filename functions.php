@@ -19,15 +19,15 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		//Suporte ao editor de logo pro tema
-		/*add_theme_support(
+		add_theme_support(
 			'custom-logo',
 			array(
 				'height'      => 190,
-				'width'       => 190,
+				'width'       => 350,
 				'flex-width'  => false,
 				'flex-height' => false,
 			)
-		);*/
+		);
 
 		//Suporte a imagens wide do editor
 		add_theme_support( 'align-wide' );
@@ -45,7 +45,7 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 			)
 		);*/
 
-		/*add_theme_support(
+		add_theme_support(
 			'html5',
 			array(
 				'search-form',
@@ -54,13 +54,15 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 				'gallery',
 				'caption',
 			)
-		);*/
+		);
 		
 
-		//add_theme_support( 'customize-selective-refresh-widgets' );
-		//add_theme_support( 'wp-block-styles' );
+		//Verificar melhor esse item...
+		add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support( 'wp-block-styles' );
 		//add_theme_support( 'editor-styles' );
 		//add_editor_style( 'style-editor.css' );
+		add_theme_support( 'responsive-embeds' );
 
 		/*add_theme_support(
 			'editor-font-sizes',
@@ -122,8 +124,6 @@ if ( ! function_exists( 'blackdigital_setup' ) ) :
 				),
 			)
 		);*/
-
-		//add_theme_support( 'responsive-embeds' );
 
 		$updateManager = UpdateManager::get_instance();
 		$updateManager->insertToUpdate("Black Digital", get_template_directory(), "origin", "master");
