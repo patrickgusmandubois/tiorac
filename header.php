@@ -19,6 +19,12 @@
 <div id="page" class="site">
 
 	<header class="site-header">
+		<?php
+			if ( function_exists( 'the_custom_logo' ) ) {
+				the_custom_logo();
+			}
+		?>
+
 		<?php if ( is_singular() ) :
 			get_template_part( 'template-parts/header/single' );
 			rewind_posts();
