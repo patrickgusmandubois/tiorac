@@ -5,6 +5,9 @@
  *
  * @package BlackDigital
  * @subpackage BaseTheme
+ * 
+ * Página de pesquisa
+ * 
  */
 
 get_header();

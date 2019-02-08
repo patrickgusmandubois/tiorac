@@ -5,6 +5,9 @@
  *
  * @package BlackDigital
  * @subpackage BaseTheme
+ * 
+ * Funções do tema
+ * 
  */
 
  require_once get_template_directory() . '/admin/class-update-manager.php';

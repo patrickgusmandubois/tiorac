@@ -1,4 +1,14 @@
 <?php
+/**
+ *
+ * @link https://blackdigital.com.br
+ *
+ * @package BlackDigital
+ * @subpackage BaseTheme
+ * 
+ * Customizações do Tema
+ * 
+ */
 
 function blackdigital_customizer( $wp_customize ){
 

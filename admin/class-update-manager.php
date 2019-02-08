@@ -1,11 +1,16 @@
 <?php
 /**
- * @package Custom_Admin_Settings
+ *
+ * @link https://blackdigital.com.br
+ *
+ * @package BlackDigital
+ * @subpackage BaseTheme
+ * 
+ * Classe de ferramenta de atualização via GIT (em teste)
+ * 
  */
  
-/**
- * @package Custom_Admin_Settings
- */
+
 class UpdateManager {
 
     protected $updates = array();

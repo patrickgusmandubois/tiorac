@@ -5,6 +5,9 @@
  *
  * @package BlackDigital
  * @subpackage BaseTheme
+ * 
+ * Listagem de post sem itens para mostrar
+ * 
  */
 ?>
 

@@ -5,6 +5,9 @@
  *
  * @package BlackDigital
  * @subpackage BaseTheme
+ * 
+ * Página de Erro 404
+ * 
  */
 
 get_header();

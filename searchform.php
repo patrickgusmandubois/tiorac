@@ -5,6 +5,9 @@
  *
  * @package BlackDigital
  * @subpackage BaseTheme
+ * 
+ * Formulário de pesquisa
+ * 
  */
 ?>
 

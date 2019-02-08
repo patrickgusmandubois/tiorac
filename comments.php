@@ -5,7 +5,11 @@
  *
  * @package BlackDigital
  * @subpackage BaseTheme
+ * 
+ * Template para comentários
+ * 
  */
+
 if ( post_password_required() ) {
 	return;
 }

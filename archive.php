@@ -5,8 +5,10 @@
  *
  * @package BlackDigital
  * @subpackage BaseTheme
+ * 
+ * Página de listagem
+ * 
  */
-
 
 get_header();
 ?>

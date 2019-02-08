@@ -1,6 +1,13 @@
 <?php
 /**
- * @package Custom_Admin_Settings
+ *
+ * @link https://blackdigital.com.br
+ *
+ * @package BlackDigital
+ * @subpackage BaseTheme
+ * 
+ * Classe de manuseio de ferramentas do tema (Em teste)
+ * 
  */
 
 class ManagerTheme {

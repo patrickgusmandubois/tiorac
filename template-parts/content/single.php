@@ -5,6 +5,9 @@
  *
  * @package BlackDigital
  * @subpackage BaseTheme
+ * 
+ * Mostragem de um conteúdo
+ * 
  */
 ?>
 

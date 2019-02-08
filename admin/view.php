@@ -1,7 +1,14 @@
 <?php
-/*
-
-*/
+/**
+ *
+ * @link https://blackdigital.com.br
+ *
+ * @package BlackDigital
+ * @subpackage BaseTheme
+ * 
+ * View de atualização (Refatorar)
+ * 
+ */
 
 ?>
 

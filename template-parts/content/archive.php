@@ -5,6 +5,9 @@
  *
  * @package BlackDigital
  * @subpackage BaseTheme
+ * 
+ * Listagem de conteúdo dentro de um loop
+ * 
  */
 ?>
 

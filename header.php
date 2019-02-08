@@ -5,7 +5,11 @@
  *
  * @package BlackDigital
  * @subpackage BaseTheme
+ * 
+ * Template do cabeçalho das páginas
+ * 
  */
+
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
