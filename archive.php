@@ -27,7 +27,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/content/content' );
+				get_template_part( 'template-parts/content/loop', get_post_type());
 
 				// End the loop.
 			endwhile;
@@ -42,7 +42,7 @@ get_header();
 
 			// If no content, include the "No posts found" template.
 		else :
-			get_template_part( 'template-parts/content/content', 'none' );
+			get_template_part( 'template-parts/content/loop', 'none' );
 
 		endif;
 		?>

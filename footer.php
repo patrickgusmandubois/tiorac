@@ -11,7 +11,24 @@
 	</div><!-- #content -->
 
 	<footer class="site-footer">
-		<?php get_template_part( 'template-parts/footer/before' ); ?>
+		<?php 
+		rewind_posts();
+
+		if ( is_front_page() ) {
+			get_template_part( 'template-parts/footer/frontpage');
+		}
+		else {
+			get_template_part( 'template-parts/footer/notFrontpage', get_post_type() );
+
+			if  ( is_singular() ) {
+				get_template_part( 'template-parts/footer/single', get_post_type() );
+			}
+			
+			if ( is_archive() ) {
+				get_template_part( 'template-parts/footer/archive', get_post_type() );
+			}
+		}
+		?>
 		<div class="site-info">
 			<?php $blog_info = get_bloginfo( 'name' ); ?>
 			<?php if ( ! empty( $blog_info ) ) : ?>

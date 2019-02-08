@@ -25,10 +25,23 @@
 			}
 		?>
 
-		<?php if ( is_singular() ) :
-			get_template_part( 'template-parts/header/single' );
-			rewind_posts();
-		endif; ?>
+		<?php 
+		if ( is_front_page() ) {
+			get_template_part( 'template-parts/header/frontpage');
+		}
+		else {
+			get_template_part( 'template-parts/header/notFrontpage', get_post_type() );
+
+			if  ( is_singular() ) {
+				get_template_part( 'template-parts/header/single', get_post_type() );
+			}
+
+			if ( is_archive() ) {
+				get_template_part( 'template-parts/header/archive', get_post_type() );
+			}
+		}
+
+		rewind_posts(); ?>
 	</header><!-- .site-header -->
 
 	<div id="content" class="site-content">
