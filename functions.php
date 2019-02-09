@@ -157,6 +157,7 @@ add_action( 'widgets_init', 'blackdigital_widgets_init' );
 
 
 function blackdigital_scripts() {
+	wp_enqueue_script("jquery");
 	wp_enqueue_style( 'blackdigital-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 	//wp_style_add_data( 'twentynineteen-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'blackdigital-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
