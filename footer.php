@@ -11,7 +11,7 @@
  */
 ?>
 
-	</div><!-- #content -->
+	</main><!-- #content -->
 
 	<footer class="site-footer">
 		<?php 
