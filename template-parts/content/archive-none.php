@@ -12,10 +12,6 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nada encontrado', 'black-digital' ); ?></h1>
-	</header><!-- .page-header -->
-
 	<div class="page-content">
 		<?php
 		if ( is_search() ) :
