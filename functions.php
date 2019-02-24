@@ -194,5 +194,47 @@ add_filter( 'get_the_archive_title', 'blackdigital_get_the_archive_title');
 
 
 
+function blackdigital_paginate_links($config) {
+	$type = 'plain';
+
+	if (array_key_exists("type", $config)) {
+		$type = $config["type"];
+	}
+
+	if ($type == "plain") {
+		$pagination = '<ul class="pagination">';
+	} else {
+		$pagination = array();
+	}
+
+	$config["type"] = "array";
+	$paginate = paginate_links( $config );
+
+	if( $paginate ) {
+		foreach( $paginate as $page ) {
+			$page = str_replace("page-numbers", "page-link", $page);
+			$line = "";
+
+			if( strpos( $page, 'current' ) ) {
+				$line = "<li class='page-item disabled'>$page</li>";
+			} else {
+				$line = "<li class='page-item'>$page</li>";
+			}
+
+			if ($type == 'plain') {
+				$pagination .= $line;
+			} else {
+				$pagination[] = $line;
+			}
+		}
+	}
+
+	if ($type == 'plain') {
+		$pagination .= "</ul>";
+	}
+
+	return $pagination;
+}
+
 
 require_once get_template_directory() . '/classes/tgm-plugin-activation.php';
