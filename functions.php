@@ -194,7 +194,7 @@ add_filter( 'get_the_archive_title', 'blackdigital_get_the_archive_title');
 
 
 
-function blackdigital_paginate_links($config) {
+function blackdigital_paginate_links($config = array()) {
 	$type = 'plain';
 
 	if (array_key_exists("type", $config)) {
