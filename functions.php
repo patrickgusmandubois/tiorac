@@ -178,10 +178,7 @@ add_action( 'wp_print_footer_scripts', 'twentynineteen_skip_link_focus_fix' );
 */
 
 function blackdigital_get_the_archive_title($title) {
-
-	asdsadsadsad
-
-    if ( is_category() ) {
+	if ( is_category() ) {
 		$title = single_cat_title( '', false );
 	} elseif ( is_tag() ) {
 		$title = single_tag_title( '', false );
