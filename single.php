@@ -11,36 +11,26 @@
  */
 
 get_header();
-?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
 
-			<?php
+/* Start the Loop */
+while ( have_posts() ) :
+	the_post();
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+	get_template_part( 'template-parts/content/single', get_post_type() );
 
-				get_template_part( 'template-parts/content/single', get_post_type() );
+	/*the_posts_navigation(
+		array(
+			'prev_text' => 'Anterior',
+			'next_text' => 'Próximo',
+			'screen_reader_text' => ''
+		));*/
 
-				/*the_posts_navigation(
-					array(
-						'prev_text' => 'Anterior',
-						'next_text' => 'Próximo',
-						'screen_reader_text' => ''
-					));*/
+	// If comments are open or we have at least one comment, load up the comment template.
+	if ( comments_open() || get_comments_number() ) {
+		comments_template();
+	}
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+endwhile; // End of the loop.
 
-			endwhile; // End of the loop.
-			?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php
 get_footer();

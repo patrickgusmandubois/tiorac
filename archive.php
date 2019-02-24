@@ -11,15 +11,7 @@
  */
 
 get_header();
-?>
-
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
 		
-			<?php get_template_part( 'template-parts/content/archive', get_post_type()); ?>
-	
-		</main><!-- #main -->
-	</section><!-- #primary -->
+get_template_part( 'template-parts/content/archive', get_post_type());
 
-<?php
 get_footer();
