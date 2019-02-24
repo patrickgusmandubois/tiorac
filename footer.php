@@ -17,6 +17,8 @@
 		<?php 
 		rewind_posts();
 
+		get_template_part( 'template-parts/footer/all');
+
 		if ( is_front_page() ) {
 			get_template_part( 'template-parts/footer/frontpage');
 		}

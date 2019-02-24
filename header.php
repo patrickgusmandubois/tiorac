@@ -30,6 +30,9 @@
 		?>
 
 		<?php 
+
+		get_template_part( 'template-parts/header/all');
+
 		if ( is_front_page() ) {
 			get_template_part( 'template-parts/header/frontpage');
 		}
