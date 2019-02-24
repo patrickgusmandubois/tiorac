@@ -6,7 +6,7 @@
  * @package BlackDigital
  * @subpackage BaseTheme
  * 
- * Página simples
+ * Página base
  * 
  */
 
@@ -16,31 +16,37 @@ get_header();
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php
+		<?php
+		if ( have_posts() ) {
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			if (is_archive()) {
 
-				get_template_part( 'template-parts/content/single', get_post_type() );
+				while ( have_posts() ) {
+					the_post();
+					get_template_part( 'template-parts/content/loop' );
+				}
 
-				/*the_posts_navigation(
+				// Previous/next page navigation.
+				the_posts_navigation(
 					array(
 						'prev_text' => 'Anterior',
 						'next_text' => 'Próximo',
 						'screen_reader_text' => ''
-					));*/
+					));
+			} else {
+				get_template_part( 'template-parts/content/single', get_post_type() );
+			}
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+		} else {
 
-			endwhile; // End of the loop.
-			?>
+			// If no content, include the "No posts found" template.
+			get_template_part( 'template-parts/content/loop', 'none' );
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+		}
+		?>
+
+		</main><!-- .site-main -->
+	</section><!-- .content-area -->
 
 <?php
 get_footer();
