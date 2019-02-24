@@ -23,7 +23,7 @@ get_header();
 
 				while ( have_posts() ) {
 					the_post();
-					get_template_part( 'template-parts/content/loop' );
+					get_template_part( 'template-parts/content/loop', get_post_type()  );
 				}
 
 				// Previous/next page navigation.
