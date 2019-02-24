@@ -34,7 +34,7 @@ get_header();
 						'screen_reader_text' => ''
 					));
 			} else {
-				get_template_part( 'template-parts/content/single', get_post_type() );
+				get_template_part( 'template-parts/content/single' );
 			}
 
 		} else {
